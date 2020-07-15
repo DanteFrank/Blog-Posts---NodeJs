@@ -1,0 +1,9 @@
+p {
+    margin: 10px 0 !important;
+}
+
+.login-container {
+    max-width: 60%;
+    margin-top: 50px;
+    text-align: center;
+}
