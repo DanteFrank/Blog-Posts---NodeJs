@@ -1,11 +1,11 @@
 const express = require('express')
-
 const router = express.Router()
+const { ensureAuth, ensureGuest} = require('../middleware/auth')
 
 
 //@decs Login Page
 //@route GET /
-router.get('/',(req, res) => {
+router.get('/', ensureGuest, (req, res) => {
     res.render('signin', {
         layout: 'login'
     })
@@ -14,8 +14,10 @@ router.get('/',(req, res) => {
 
 //@decs Dashboard Page
 //@route  /dashboaard
-router.get('/dashboard',(req, res) => {
-    res.render('dashboard')
+router.get('/dashboard', ensureAuth, (req, res) => {
+    res.render('dashboard', {
+        name: req.user.firstName,
+    })
 })
 
 
