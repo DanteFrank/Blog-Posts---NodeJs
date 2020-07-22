@@ -20,13 +20,21 @@ connectDB()
 
 const app = express()
 
+
+//Body Parser
+app.use(express.urlencoded({ extended: false}))
+app.use(express.json())
+
 //Morgan Login
 if(process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))
 }
 
+//Handlebar Helpers
+const { formatDate} = require('./helpers/hbs')
+
 //Handlesbars
-app.engine('.hbs', exphbs({ defaultLayout: 'main', extname: '.hbs'}));
+app.engine('.hbs', exphbs({ helpers: { formatDate,}, defaultLayout: 'main', extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
 
@@ -50,6 +58,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 //Routes
 app.use('/', require('./routes/index'))
 app.use('/auth', require('./routes/auth'))
+app.use('/blogs', require('./routes/blogs'))
 
 
 const PORT = process.env.PORT || 3000

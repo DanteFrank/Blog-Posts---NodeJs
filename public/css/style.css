@@ -1,3 +1,6 @@
+.navbar{
+    background-color: #272b30 !important;
+}
 p {
     margin: 10px 0 !important;
 }
@@ -7,3 +10,6 @@ p {
     margin-top: 50px;
     text-align: center;
 }
+
+
+
