@@ -87,5 +87,5 @@ app.use('/blogs', require('./routes/blogs'))
 
 const PORT = process.env.PORT || 3000
 
-app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} on port ${PORT}`))
+app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} on port ${PORT}`,  this.address().port, app.config.env))
 
