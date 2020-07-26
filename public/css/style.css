@@ -1,0 +1,28 @@
+.navbar{
+    background-color: #272b30 !important;
+}
+p {
+    margin: 10px 0 !important;
+}
+
+.login-container {
+    max-width: 60%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.fa-small {
+    font-size: 16px !important;
+}
+
+
+.btn-float {
+    float: left;
+    margin-right: 10px;
+}
+
+.img-small {
+    width: 180px;
+}
+
+
